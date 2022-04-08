@@ -1,16 +1,19 @@
 from CardDeck import *
-from Player import *
 from EmailSender import *
+
+"""
+This file is just for actually creating the deck and players and dealing out and sending the cards
+"""
 
 
 players_numbers = ["2082276546@tmomail.net", "2088816110@vtext.com"]
-players: [Player] = []
+players = []
+deck = CardDeck()
+deck.shuffle()
 
 for email in players_numbers:
     players.append(Player(email))
 
-deck = CardDeck()
-deck.shuffle()
 deck.deal(players, 5)
 
 for player in players:

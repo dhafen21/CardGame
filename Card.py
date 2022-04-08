@@ -1,4 +1,7 @@
 class Card:
+    """
+    Class for describing a single card in a game
+    """
 
     def __init__(self, suit: str, face_value: int, power: str = None):
         """
@@ -18,7 +21,11 @@ class Card:
         """
         print(self.get_card())
 
-    def get_card(self):
+    def get_card(self) -> str:
+        """
+        Gets the string representation for a single card including the suit, value, and power
+        :return: String description for the current card
+        """
         if self.power is not None:
             return "Suit: {}, Face Value: {}, Power: {}".format(self.suit, self.face_value, self.power)
         else:
