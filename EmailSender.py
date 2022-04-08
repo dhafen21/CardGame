@@ -36,4 +36,3 @@ def send_email(player: Player):
         server.sendmail(
             sender_email, receiver_email, message.as_string()
         )
-

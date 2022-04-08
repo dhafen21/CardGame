@@ -6,7 +6,7 @@ This file is just for actually creating the deck and players and dealing out and
 """
 
 
-players_numbers = ["2082276546@tmomail.net"]#, "2088816110@vtext.com"]
+players_numbers = ["2082276546@tmomail.net", "2088816110@vtext.com"]
 players = []
 deck = CardDeck()
 deck.shuffle()

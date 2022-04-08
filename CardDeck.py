@@ -11,10 +11,9 @@ class CardDeck:
 
     def __init__(self, num_players: int = 4, suits=None, number_range: range = range(1, 6)):
         """
-        Initializes the deck of cards
-        :param num_players: the number of players in the game. Determines the number of duplicates that each card will have
-        :param suits: The suits used in the game (Green & Red, or Spades, Clubs, Hearts Diamonds, etc)
-        :param number_range: The range of values for the cards used in the game
+        Initializes the deck of cards :param num_players: the number of players in the game. Determines the number of
+        duplicates that each card will have :param suits: The suits used in the game (Green & Red, or Spades, Clubs,
+        Hearts Diamonds, etc) :param number_range: The range of values for the cards used in the game
         """
 
         if suits is None:
@@ -41,7 +40,7 @@ class CardDeck:
 
     def shuffle(self):
         """
-        shuffles and updates the order of the deck so it is randomized
+        shuffles and randomizes the order of the deck
         :return:
         """
         new_deck = []
@@ -73,4 +72,3 @@ class CardDeck:
                     if len(self.deck) == 0:
                         break
                     player.hand.append(self.deck.pop())
-
