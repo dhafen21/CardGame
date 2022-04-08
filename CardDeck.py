@@ -28,6 +28,7 @@ class CardDeck:
             for val in self.number_range:
                 for player in range(self.num_players):
                     self.deck.append(Card(suit, val))
+        print("A {} card deck was created".format(len(self.deck)))
 
     def print_deck(self) -> None:
         """
@@ -47,6 +48,7 @@ class CardDeck:
         while len(self.deck) > 0:
             new_deck.append(self.deck.pop(random.randint(0, len(self.deck) - 1)))
         self.deck = new_deck
+        print("Shuffled the deck")
 
     def deal(self, players: [Player], num_cards_per_player: int = None):
         """
@@ -56,6 +58,7 @@ class CardDeck:
         :param num_cards_per_player: The number of cards each player receives
         :return:
         """
+        print("Dealing cards")
         if num_cards_per_player is not None:
             for i in range(num_cards_per_player):
                 for player in players:
