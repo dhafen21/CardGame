@@ -9,11 +9,14 @@ class CardDeck:
     deck creation, shuffling, and dealing out the cards to a list of Player objects
     """
 
-    def __init__(self, num_players: int = 4, suits=None, number_range: range = range(1, 6)):
+    def __init__(self, num_players: int = 4, suits: object = None, number_range: range = range(1, 6)):
         """
-        Initializes the deck of cards :param num_players: the number of players in the game. Determines the number of
-        duplicates that each card will have :param suits: The suits used in the game (Green & Red, or Spades, Clubs,
-        Hearts Diamonds, etc) :param number_range: The range of values for the cards used in the game
+        Initializes the deck of cards
+        :param num_players: the number of players in the game. Determines the number of
+        duplicates that each card will have
+        :param suits: The suits used in the game (Green & Red, or Spades, Clubs,
+        Hearts Diamonds, etc)
+        :param number_range: The range of values for the cards used in the game
         """
 
         if suits is None:
@@ -28,6 +31,18 @@ class CardDeck:
                 for player in range(self.num_players):
                     self.deck.append(Card(suit, val))
         print("A {} card deck was created".format(len(self.deck)))
+
+    def add_power_cards(self, powers: {str: int}) -> None:
+        """
+        Adds wild or power cards to the deck
+        :param powers: Dictionary that stores the power of the card as an index, and the number of duplicates of that
+        card. Ex. {"Double Points": 2}
+        :return: None
+        """
+        print("Adding power cards to the deck")
+        for power in powers:
+            for i in range(powers[power]):
+                self.deck.append(Card("Power", None, power))
 
     def print_deck(self) -> None:
         """

@@ -18,5 +18,5 @@ class Player:
         """
         print("Showing {}'s hand: \n".format(self.email))
         for card in self.hand:
-            card.to_string()
+            card.print_card()
         print('\n')

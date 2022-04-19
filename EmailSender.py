@@ -24,7 +24,7 @@ def send_email(player: Player):
     text = "\n"
 
     for card in player.hand:
-        text += card.get_card() + '\n'
+        text += card.to_string() + '\n'
 
     part1 = MIMEText(text, "plain")
 
